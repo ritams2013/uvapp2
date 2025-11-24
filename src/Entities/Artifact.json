@@ -1,0 +1,127 @@
+{
+  "name": "Artifact",
+  "type": "object",
+  "properties": {
+    "artifact_code": {
+      "type": "string",
+      "description": "Unique identifier for the artifact"
+    },
+    "photo_url": {
+      "type": "string",
+      "description": "URL of the artifact photo"
+    },
+    "audio_url": {
+      "type": "string",
+      "description": "URL of the audio recording"
+    },
+    "location_lat": {
+      "type": "number",
+      "description": "Latitude of discovery location"
+    },
+    "location_lng": {
+      "type": "number",
+      "description": "Longitude of discovery location"
+    },
+    "user_notes": {
+      "type": "string",
+      "description": "User's initial assessment of the artifact"
+    },
+    "is_interesting": {
+      "type": "boolean",
+      "default": false,
+      "description": "Admin flag for interesting artifacts"
+    },
+    "admin_notes": {
+      "type": "string",
+      "description": "Admin's notes about the artifact"
+    },
+    "admin_reviewed": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether admin has reviewed this artifact"
+    },
+    "artifact_type": {
+      "type": "string",
+      "enum": [
+        "pottery",
+        "glass",
+        "metal",
+        "stone",
+        "bone",
+        "textile",
+        "wood",
+        "other",
+        "uncategorized"
+      ],
+      "default": "uncategorized",
+      "description": "Type of artifact categorized by AI"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "none",
+        "low",
+        "medium",
+        "high",
+        "urgent"
+      ],
+      "default": "none",
+      "description": "Priority level for artifact review"
+    },
+    "material": {
+      "type": "string",
+      "description": "Material the artifact is made from (e.g., bronze, iron, clay, flint)"
+    },
+    "country": {
+      "type": "string",
+      "description": "Country where the artifact was discovered"
+    },
+    "functional_type": {
+      "type": "string",
+      "enum": [
+        "weapon",
+        "tool",
+        "ornament",
+        "vessel",
+        "building_material",
+        "religious_object",
+        "coin",
+        "inscription",
+        "other",
+        "unknown"
+      ],
+      "default": "unknown",
+      "description": "Functional classification of the artifact"
+    },
+    "time_period": {
+      "type": "string",
+      "enum": [
+        "paleolithic",
+        "mesolithic",
+        "neolithic",
+        "bronze_age",
+        "iron_age",
+        "classical_antiquity",
+        "medieval",
+        "renaissance",
+        "modern",
+        "unknown"
+      ],
+      "default": "unknown",
+      "description": "Historical time period"
+    },
+    "estimated_date": {
+      "type": "string",
+      "description": "Estimated date or date range (e.g., '3000 BCE', '100-200 CE')"
+    }
+  },
+  "required": [
+    "photo_url"
+  ],
+  "rls": {
+    "read": {},
+    "write": {
+      "user_condition": {}
+    }
+  }
+}

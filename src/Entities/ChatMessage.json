@@ -1,0 +1,63 @@
+{
+  "name": "ChatMessage",
+  "type": "object",
+  "properties": {
+    "conversation_id": {
+      "type": "string",
+      "description": "ID of the conversation"
+    },
+    "content": {
+      "type": "string",
+      "description": "Message content"
+    },
+    "is_read": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether the message has been read"
+    },
+    "read_by": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [],
+      "description": "Array of emails who have read this message"
+    },
+    "file_urls": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [],
+      "description": "Array of file URLs attached to this message"
+    },
+    "file_names": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [],
+      "description": "Array of original file names"
+    },
+    "artifact_references": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [],
+      "description": "Array of artifact IDs referenced in this message"
+    }
+  },
+  "required": [
+    "conversation_id",
+    "content"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {}
+    },
+    "write": {
+      "user_condition": {}
+    }
+  }
+}
